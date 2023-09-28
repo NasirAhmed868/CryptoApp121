@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import Themes from '../../../utility/theme';
-
 const styles = StyleSheet.create({
   container: {
     width: scale(30),
@@ -12,14 +11,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: scale(100),
     marginTop: verticalScale(10),
-   
   },
 
   sllaybusBox: {
     width: scale(100),
     height: verticalScale(40),
     flexDirection: 'row',
-    marginBottom:verticalScale(20)
+    marginBottom: verticalScale(20),
   },
   bookImage: {
     width: scale(20),
@@ -27,7 +25,7 @@ const styles = StyleSheet.create({
     margin: moderateScale(2),
     flexDirection: 'row',
     color: Themes.textColor,
-    marginRight:scale(50)
+    marginRight: scale(50),
   },
   sllybusText: {
     marginLeft: scale(8),
@@ -42,10 +40,13 @@ const styles = StyleSheet.create({
   IImage: {
     width: scale(20),
     height: scale(20),
-    margin: moderateScale (2),
+    margin: moderateScale(2),
     marginTop: moderateScale(17),
-
- 
+  },
+  imageArrow: {
+    marginRight: scale(30),
+    width: scale(10),
+    height: verticalScale(10),
   },
 });
 export default styles;

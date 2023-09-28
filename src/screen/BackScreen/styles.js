@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import Themes from '../../utility/theme';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -63,7 +62,10 @@ const styles = StyleSheet.create({
     color: Themes.textColor,
     marginLeft: scale(20),
   },
-
+  textContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   to: {
     width: scale(40),
     height: verticalScale(28),
@@ -101,6 +103,29 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(20),
     marginLeft: scale(50),
     color: Themes.textColor,
+  },
+  inputText: {
+    marginTop: verticalScale(45),
+    fontSize: moderateScale(16),
+    height: verticalScale(35),
+  },
+  ehtTextinput: {
+    marginTop: verticalScale(15),
+    fontSize: moderateScale(16),
+    height: moderateScale(35),
+  },
+  txnTextinput: {
+    marginTop: verticalScale(25),
+    fontSize: moderateScale(12),
+    height: moderateScale(35),
+  },
+  btnContainer: {
+    alignItems: 'center',
+    marginTop: verticalScale(50),
+  },
+  paymentBtn: {
+    width: scale(300),
+    height: verticalScale(50),
   },
 });
 

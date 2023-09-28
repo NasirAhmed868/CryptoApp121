@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
-import Themes from '../../utility/theme';
-
+import { scale, verticalScale} from 'react-native-size-matters';
+import Themes from '../../../utility/theme';
 const styles = StyleSheet.create({
   container: {
     width: scale(70),

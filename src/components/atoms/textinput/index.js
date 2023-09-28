@@ -4,12 +4,10 @@ import styles from './styles';
 
 const MyTextInput = ({btnStyle}) => {
   const [text, setText] = useState('');
-
-  const onChangeText = newText => {
+const onChangeText = newText => {
     setText(newText);
   };
-
-  return (
+return (
     <View style={styles.container}>
       <TextInput
         style={[styles.textInput,btnStyle]}

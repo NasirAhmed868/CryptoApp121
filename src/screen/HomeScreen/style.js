@@ -1,11 +1,14 @@
 import {StyleSheet} from 'react-native';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import Themes from '../../utility/theme';
-
 const Styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: Themes.backgroundColor,
+  },
+  mainView: {
+    height: verticalScale(80),
+    flexDirection: 'row',
   },
   UpiText: {
     flex: 1,
@@ -84,6 +87,34 @@ const Styles = StyleSheet.create({
     fontWeight: 'bold',
     flexDirection: 'row',
     color: Themes.textColor,
+  },
+  btnContanier: {
+    width: scale(160),
+    height: verticalScale(40),
+    marginLeft: scale(10),
+  },
+  footerbtnContanier: {
+    flexDirection: 'row',
+    flex: 1,
+    position: 'absolute',
+    bottom: 0,
+    marginLeft: scale(10),
+  },
+  mapFunction: {
+    marginTop: verticalScale(50),
+  },
+  profileContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  homeReviceBtn: {
+    width: scale(80),
+    marginLeft: scale(20),
+    marginTop: scale(10),
+  },
+  faitBtn: {
+    width: scale(160),
+    height: verticalScale(40),
   },
 });
 

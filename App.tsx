@@ -1,13 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import Payment from './src/screen/BackScreen';
 import HomeScreen from './src/screen/HomeScreen';
 
+const Stack = createStackNavigator();
 const App = () => {
   return (
-    <View style={{flex: 1}}>
-      <HomeScreen />
-    </View>
+  
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+          initialRouteName="HomeScreen">
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="Payment" component={Payment} />
+        </Stack.Navigator>
+      </NavigationContainer>
+
   );
 };
 

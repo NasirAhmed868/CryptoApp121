@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import {scale} from 'react-native-size-matters';
-import CustomButton from '../atoms';
-import DashboradComponents from '../atoms/profiteData';
+
+import CustomButton from '../customButton';
+import DashboradComponents from '../profiteData';
 import styles from './styles';
 
 const DashboradIcons = ({
@@ -27,7 +28,9 @@ const DashboradIcons = ({
 
             <View style={{flexDirection: 'row'}}>
               <Text style={{color: 'white'}}>{item.value}</Text>
-              <Text style={{color: 'green'}}>{item.percentage}</Text>
+              <Text style={{color: item.percentage >= 0 ? 'green' : 'red'}}>
+                {item.percentage} %
+              </Text>
             </View>
           </View>
 
