@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-const DashboradComponents = ({item, index}) => {
+const HomeListItemDetail = ({item, index}) => {
   console.log(item);
   return (
     <TouchableOpacity style={styles.sllaybusBox}>
@@ -17,4 +17,4 @@ const DashboradComponents = ({item, index}) => {
   );
 };
 
-export default DashboradComponents;
+export default HomeListItemDetail;

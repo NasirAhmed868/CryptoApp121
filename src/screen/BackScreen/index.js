@@ -3,27 +3,31 @@ import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
-import HomeScreen from '../HomeScreen';
 import CustomButton from '../../components/atoms/customButton';
 import MyTextInput from '../../components/atoms/textinput';
 import {en} from '../../i18n';
 import Themes from '../../utility/theme';
+import HomeScreen from '../HomeScreen';
+import ServiceInvoker from '../../service';
 
-const Payment = (prop) => {
-  console.log(prop)
-  const item =prop?.route?.params?.item
-  console.log("itemm",prop)
+const Payment = prop => {
+  console.log(prop);
+  const item = prop?.route?.params?.item;
+  console.log('paymentitem', item);
   const navigation = useNavigation();
-  const onBtnPrees = () => {
+  const onBtn = () => {
     navigation.navigate(HomeScreen);
+  };
 
+  const onBtnPrees = () => {
+    ServiceInvoker.ApiCall();
   };
 
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
         <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity onPress={onBtnPrees}>
+          <TouchableOpacity onPress={onBtn}>
             <Image
               style={styles.leftArrow}
               source={require('../../assets/icons/leftwhite.png')}
@@ -65,7 +69,7 @@ const Payment = (prop) => {
           </View>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <Text style={styles.ETH}>{en.ehtText}</Text>
+          <Text style={styles.ETH}>{item?.name}</Text>
           <MyTextInput btnStyle={styles.ehtTextinput} />
         </View>
         <View style={{flexDirection: 'row'}}>
@@ -73,7 +77,11 @@ const Payment = (prop) => {
           <MyTextInput btnStyle={styles.txnTextinput} />
         </View>
         <View style={styles.btnContainer}>
-          <CustomButton title="Send" btnStyle={styles.paymentBtn} />
+          <CustomButton
+            title="Send"
+            btnStyle={styles.paymentBtn}
+            onBtnPrees={onBtnPrees}
+          />
         </View>
       </View>
     </SafeAreaView>

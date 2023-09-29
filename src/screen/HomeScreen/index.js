@@ -5,9 +5,10 @@ import Styles from './style';
 import {useNavigation} from '@react-navigation/native';
 import {en} from '../../i18n';
 import CustomButton from '../../components/atoms/customButton';
-import DashboradIcons from '../../components/atoms/profile';
 import {data} from '../../utility/appConstant';
 import Themes from '../../utility/theme';
+import HomeListItem from '../../components/atoms/homeListItem';
+
 
 const HomeScreen = () => {
   const [clickindex, setclickindex] = useState(-1);
@@ -16,7 +17,7 @@ const HomeScreen = () => {
     setclickindex(index);
   };
 
-  const onSendButtonClick = ({item}) => {
+  const onSendButtonClick = item => {
     console.log('onitemclick', item);
     navigation.navigate('Payment', {item: item});
   };
@@ -60,11 +61,11 @@ const HomeScreen = () => {
           <View style={Styles.mapFunction}>
             {data.map((item, index) => {
               return (
-                <DashboradIcons
+                <HomeListItem
                   item={item}
                   index={index}
                   onListItemClick={onListItemClick}
-                  onSendButtonClick={(selectedItem) => onSendButtonClick(selectedItem)}
+                  onSendButtonClick={onSendButtonClick}
                   clickindex={clickindex}
                 />
               );

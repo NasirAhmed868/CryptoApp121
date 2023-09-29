@@ -1,13 +1,10 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import {scale} from 'react-native-size-matters';
-import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../customButton';
-import DashboradComponents from '../profiteData';
+import HomeListItemDetail from '../homeRowItemDetail';
 import styles from './styles';
-import Payment from '../../../screen/BackScreen';
-
-const DashboradIcons = ({
+const HomeListItem = ({
   item,
   index,
   onListItemClick,
@@ -50,7 +47,7 @@ const DashboradIcons = ({
       {index == clickindex && (
         <View>
           {item.transaction.map((transItem, transIndex) => (
-            <DashboradComponents item={transItem} index={transIndex} />
+            <HomeListItemDetail item={transItem} index={transIndex} />
           ))}
         </View>
       )}
@@ -58,4 +55,4 @@ const DashboradIcons = ({
   );
 };
 
-export default DashboradIcons;
+export default HomeListItem;
