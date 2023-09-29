@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
@@ -19,8 +26,11 @@ const Payment = prop => {
     navigation.navigate(HomeScreen);
   };
 
-  const onBtnPrees = () => {
-    ServiceInvoker.ApiCall();
+  const onBtnPrees = async () => {
+    const ApiCallRespones = await ServiceInvoker.ApiCall();
+    console.log(ApiCallRespones);
+    if (ApiCallRespones.status == 200) alert('Succes');
+    else alert('false');
   };
 
   return (

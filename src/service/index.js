@@ -1,44 +1,43 @@
-const axios = require('axios')
-
- class ServiceInvoker {
-   static ApiCall(){
-        // Create a new instance of axios
-
-//https://jsonplaceholder.typicode.com/posts
-
-  const new_instance = axios.create({
-
-    baseURL: 'https://jsonplaceholder.typicode.com/',
-
-    timeout: 1000,
-
-    headers: {
-
-      'Accept': 'application/json',
-
-    }
-
-  })
+import axios from 'axios';
 
  
 
-  new_instance({
+class ServiceInvoker {
 
-    method: 'get',
+  static async ApiCall() {
 
-    url: '/posts'
+    var responseJson = '';
 
-  }).then(apiResponse => {
+    const new_instance = axios.create({
 
-     const products = apiResponse.data
-         
-        console.log(  "productprint", products) 
-      return   response.json(products) 
-    
-      
-  })
+      baseURL: 'https://jsonplaceholder.typicode.com',
 
-    }
- }
- export default ServiceInvoker;
+      timeout: 1000,
 
+    });
+
+    await new_instance({
+
+      method: 'get',
+
+      url: '/posts',
+
+    }).then(response => {
+
+      // const products = response.data;
+
+      console.log('response ----------> ', response);
+
+      responseJson = response;
+
+      return responseJson;
+
+    });
+
+    return responseJson;
+
+  }
+
+}
+
+export default ServiceInvoker;
