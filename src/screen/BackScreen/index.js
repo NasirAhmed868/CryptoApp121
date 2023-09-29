@@ -7,12 +7,18 @@ import HomeScreen from '../HomeScreen';
 import CustomButton from '../../components/atoms/customButton';
 import MyTextInput from '../../components/atoms/textinput';
 import {en} from '../../i18n';
+import Themes from '../../utility/theme';
 
-const Payment = () => {
+const Payment = (prop) => {
+  console.log(prop)
+  const item =prop?.route?.params?.item
+  console.log("itemm",prop)
   const navigation = useNavigation();
   const onBtnPrees = () => {
     navigation.navigate(HomeScreen);
+
   };
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
@@ -23,7 +29,17 @@ const Payment = () => {
               source={require('../../assets/icons/leftwhite.png')}
             />
           </TouchableOpacity>
-          <Text style={styles.paymentText}>{en.payment}</Text>
+          <View>
+            <Text style={styles.paymentText}>{en.payment}</Text>
+            <View
+              style={{
+                backgroundColor: Themes.uderLine,
+                width: scale(80),
+                height: verticalScale(3),
+                marginLeft: scale(10),
+                marginTop: verticalScale(5),
+              }}></View>
+          </View>
           <Image
             style={styles.croosImg}
             source={require('../../assets/icons/xC.png')}

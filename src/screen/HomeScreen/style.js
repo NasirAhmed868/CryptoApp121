@@ -9,16 +9,16 @@ const Styles = StyleSheet.create({
   mainView: {
     height: verticalScale(80),
     flexDirection: 'row',
+    marginTop: verticalScale(20),
   },
   UpiText: {
-    flex: 1,
-    height: verticalScale(50),
     fontSize: moderateScale(20),
     marginTop: verticalScale(20),
     marginLeft: scale(20),
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
+
     color: Themes.textColor,
+    marginBottom: verticalScale(8),
   },
   imageMenu: {
     width: scale(25),
@@ -41,6 +41,7 @@ const Styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Themes.textColor,
     marginLeft: scale(18),
+  
   },
   rate: {
     width: scale(50),
@@ -90,7 +91,7 @@ const Styles = StyleSheet.create({
   },
   btnContanier: {
     width: scale(160),
-    height: verticalScale(40),
+    height: verticalScale(45),
     marginLeft: scale(10),
   },
   footerbtnContanier: {
@@ -108,13 +109,12 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   homeReviceBtn: {
-    width: scale(80),
     marginLeft: scale(20),
     marginTop: scale(10),
   },
   faitBtn: {
     width: scale(160),
-    height: verticalScale(40),
+    height: verticalScale(45),
   },
 });
 

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
   sllaybusBox: {
     width: '100%',
-    height: verticalScale(40),
+    height: verticalScale(60),
     flexDirection: 'row',
     marginLeft: scale(10),
     color: Themes.textColor,

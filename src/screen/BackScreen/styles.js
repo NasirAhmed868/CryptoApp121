@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(10),
     marginLeft: scale(10),
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
+  
     flexDirection: 'row',
     color: Themes.textColor,
   },
